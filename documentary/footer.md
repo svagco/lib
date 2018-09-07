@@ -1,7 +1,7 @@
 
 ## TODO
 
-- [ ] Add a new item to the todo list.
+- [ ] Create an alias for each SVG element, e.g., `circle`, `rect`, _etc_.
 
 ## Copyright
 

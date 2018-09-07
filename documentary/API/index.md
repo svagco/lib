@@ -1,19 +1,22 @@
 
 ## API
 
-The package is available by importing its default function:
+The package library exports a number of functions, including `makeElement` and `minify`.
 
 ```js
-import lib from '@svag/lib'
+import { makeElement, minify } from '@svag/lib'
 ```
 
-```### lib
+```### makeElement => string
 [
-  ["arg1", "string"],
-  ["arg2?", "boolean"]
+  ["options", "MakeElementOptions"]
 ]
 ```
 
-Call this function to get the result you want.
+This function will create an element as a string given the options.
 
-%EXAMPLE: example/example.js, ../src => @svag/lib%
+%TYPEDEF types/index.xml MakeElementOptions%
+
+%EXAMPLE: example/make-element.js, ../src => @svag/lib%
+
+%FORK example example/make-element%
