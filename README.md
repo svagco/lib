@@ -99,7 +99,7 @@ __<a name="coordinate">`Coordinate`</a>__: A coordinate used for drawing.
    <td>
 
 ```js
-import { roundedCorner } from '../../src'
+import { roundedCorner } from '@svag/lib'
 const C = roundedCorner({
   x: 0,
   y: 1,
@@ -125,7 +125,7 @@ C 25 1, 50 26, 50 51
    <td>
 
 ```js
-import { roundedCorner } from '../../src'
+import { roundedCorner } from '@svag/lib'
 
 const C = roundedCorner({
   x: 60,
@@ -152,7 +152,7 @@ C 60 25, 35 50, 10 50
    <td>
 
 ```js
-import { roundedCorner } from '../../src'
+import { roundedCorner } from '@svag/lib'
 
 const C = roundedCorner({
   x: 60,
@@ -179,7 +179,7 @@ C 35 60, 10 35, 10 10
    <td>
 
 ```js
-import { roundedCorner } from '../../src'
+import { roundedCorner } from '@svag/lib'
 
 const C = roundedCorner({
   x: 1,
@@ -221,7 +221,7 @@ C 1 35, 26 10, 51 10
    <td>
 
 ```js
-import { roundedCorner } from '../../src'
+import { roundedCorner } from '@svag/lib'
 
 const C = roundedCorner({
   x: 60,
@@ -248,7 +248,7 @@ C 60 35, 35 10, 10 10
    <td>
 
 ```js
-import { roundedCorner } from '../../src'
+import { roundedCorner } from '@svag/lib'
 
 const C = roundedCorner({
   x: 60,
@@ -275,7 +275,7 @@ C 35 1, 10 26, 10 51
    <td>
 
 ```js
-import { roundedCorner } from '../../src'
+import { roundedCorner } from '@svag/lib'
 const C = roundedCorner({
   x: 1,
   y: 0,
@@ -301,7 +301,7 @@ C 1 25, 26 50, 51 50
    <td>
 
 ```js
-import { roundedCorner } from '../../src'
+import { roundedCorner } from '@svag/lib'
 
 const C = roundedCorner({
   x: 1,
@@ -344,7 +344,7 @@ __<a name="svgoptions">`SVGOptions`</a>__: An option for creating an svg.
 | stretch | _boolean_ | Expand the `svg` to the width of the container by not setting `width` and `height` attributes. | `true` |
 
 ```js
-import { svg } from '../../src'
+import { svg } from '@svag/lib'
 
 const stretchedSvg = svg({
   height: 100,
@@ -364,7 +364,7 @@ console.log(stretchedSvg)
 To generate an `svg` which will not adjust its size to the viewport, the `stretch` option needs to be set to `false`.
 
 ```js
-import { svg } from '../../src'
+import { svg } from '@svag/lib'
 
 const fixedSvg = svg({
   height: 100,

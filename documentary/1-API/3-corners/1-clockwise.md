@@ -15,7 +15,7 @@
    <td>Top Right</td>
    <td>
 
-%EXAMPLE: example/corners/top-right.js%
+%EXAMPLE: example/corners/top-right.js, ../../src => @svag/lib%
   </td>
    <td>
 
@@ -30,7 +30,7 @@
    <td>Bottom Right</td>
    <td>
 
-%EXAMPLE: example/corners/bottom-right.js%
+%EXAMPLE: example/corners/bottom-right.js, ../../src => @svag/lib%
    </td>
    <td>
 
@@ -45,7 +45,7 @@
    <td>Bottom Left</td>
    <td>
 
-%EXAMPLE: example/corners/bottom-left.js%
+%EXAMPLE: example/corners/bottom-left.js, ../../src => @svag/lib%
    </td>
    <td>
 
@@ -60,7 +60,7 @@
    <td>Top Left</td>
    <td>
 
-%EXAMPLE: example/corners/top-left.js%
+%EXAMPLE: example/corners/top-left.js, ../../src => @svag/lib%
    </td>
    <td>
 
