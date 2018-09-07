@@ -29,9 +29,10 @@ export const makeElement = (options) => {
  * @param {Coordinate} to A coordinate used for drawing.
  * @param {number} to.x The `x` position of the coordinate.
  * @param {number} to.y The `y` position of the coordinate.
+ * @param {boolean} [anticlockwise] Whether going anticlockwise.
  * @returns {string} A `C` part of the path.
  */
-export const roundedCorner = (from, to) => {
+export const roundedCorner = (from, to, anticlockwise) => {
   const { x: fromX, y: fromY } = from
   const { x: toX, y: toY } = to
   const dy = toY - fromY
@@ -42,12 +43,22 @@ export const roundedCorner = (from, to) => {
   let p1
   let p2
   const isRight = (dy > 0 && dx < 0) || (dy < 0 && dx > 0)
-  if (isRight) { // bottom-right
-    p1 = `${fromX} ${fromY + hdy}`
-    p2 = `${fromX + hdx} ${toY}`
-  } else { // top-left
-    p1 = `${fromX + hdx} ${fromY}`
-    p2 = `${toX} ${toY - hdy}`
+  if (!anticlockwise) {
+    if (isRight) { // bottom-right
+      p1 = `${fromX} ${fromY + hdy}`
+      p2 = `${fromX + hdx} ${toY}`
+    } else { // top-left
+      p1 = `${fromX + hdx} ${fromY}`
+      p2 = `${toX} ${toY - hdy}`
+    }
+  } else {
+    if (isRight) { // bottom-right
+      p1 = `${fromX + hdx} ${fromY}`
+      p2 = `${toX} ${fromY + hdy}`
+    } else { // top-left
+      p1 = `${fromX} ${fromY + hdy}`
+      p2 = `${fromX + hdx} ${toY}`
+    }
   }
   return `C ${p1}, ${p2}, ${p3}`
 }
