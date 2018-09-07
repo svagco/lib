@@ -10,7 +10,7 @@ const C = roundedCorner({
 }, {
   x: 51,
   y: 10,
-})
+}, true)
 /* end example */
 console.log(C)
 const image = svg({
@@ -20,4 +20,4 @@ const image = svg({
   content: `${marker}<path marker-end="url(#arrow)" fill="none" stroke="#463961" stroke-width="2" d="M1,60 ${C}"/>`,
 })
 
-writeFileSync('images/corners/top-left.svg', image)
+writeFileSync('images/corners/abottom-right.svg', image)

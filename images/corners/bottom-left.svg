@@ -1,1 +1,5 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0, 0, 51, 51" width="51px" height="51px"><path fill="none" stroke="#463961" stroke-width="2" d="M51,50 C 26 50, 1 25, 1 0"/></svg>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0, 0, 61, 61" width="61px" height="61px"><defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refY="2" orient="auto" markerUnits="strokeWidth">
+  <path d="M0,0 L0,4 L5,2 z" fill="#f00" />
+</marker>
+</defs><path marker-end="url(#arrow)" fill="none" stroke="#463961" stroke-width="2" d="M60,60 C 35 60, 10 35, 10 10"/></svg>
