@@ -14,6 +14,7 @@ yarn add -E @svag/lib
 - [API](#api)
   * [`makeElement(options: MakeElementOptions): string`](#makeelementoptions-makeelementoptions-string)
     * [`MakeElementOptions`](#makeelementoptions)
+  * [`minify(svg: string): string`](#minifysvg-string-string)
   * [`roundedCorner(from: Coordinate, to: Coordinate, anticlockwise?: boolean): string`](#roundedcornerfrom-coordinateto-coordinateanticlockwise-boolean-string)
     * [`Coordinate`](#coordinate)
     * [Clockwise](#clockwise)
@@ -69,6 +70,36 @@ console.log(element)
 
 ```svg
 <rect test="true" font-size="12px"><circle cx="50" cy="50" r="25"/></rect>
+```
+
+### `minify(`<br/>&nbsp;&nbsp;`svg: string,`<br/>`): string`
+
+Removes the whitespace between the elements in the input string.
+
+```js
+import { minify } from '@svag/lib'
+
+const svg = `
+<g>
+  <circle fill="#FF5F52" cx="5" cy="5" r="5.25"/>
+  <circle stroke="#E33E32" stroke-width="1" cx="5" cy="5" r="5.5"/>
+</g>
+<g>
+  <circle fill="#FFBE05" cx="25" cy="5" r="5.25"/>
+  <circle stroke="#E2A100" stroke-width="1" cx="25" cy="5" r="5.5"/>
+</g>
+<g>
+  <circle fill="#15CC35" cx="45" cy="5" r="5.25"/>
+  <circle stroke="#17B230" stroke-width="1" cx="45" cy="5" r="5.5"/>
+</g>
+`
+
+const minified = minify(svg)
+console.log(minified)
+```
+
+```svg
+<g><circle fill="#FF5F52" cx="5" cy="5" r="5.25"/><circle stroke="#E33E32" stroke-width="1" cx="5" cy="5" r="5.5"/></g><g><circle fill="#FFBE05" cx="25" cy="5" r="5.25"/><circle stroke="#E2A100" stroke-width="1" cx="25" cy="5" r="5.5"/></g><g><circle fill="#15CC35" cx="45" cy="5" r="5.25"/><circle stroke="#17B230" stroke-width="1" cx="45" cy="5" r="5.5"/></g>
 ```
 
 ### `roundedCorner(`<br/>&nbsp;&nbsp;`from: Coordinate,`<br/>&nbsp;&nbsp;`to: Coordinate,`<br/>&nbsp;&nbsp;`anticlockwise?: boolean,`<br/>`): string`
