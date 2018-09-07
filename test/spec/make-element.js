@@ -41,6 +41,18 @@ const T = {
     })
     equal(el, '<test test="true" font-color="green"/>')
   },
+  'ignores undefined attributes'() {
+    const el = makeElement({
+      name: 'test',
+      attributes: {
+        test: true,
+        'font-color': 'green',
+        width: undefined,
+        height: undefined,
+      },
+    })
+    equal(el, '<test test="true" font-color="green"/>')
+  },
   'can create a new element with attributes and content'({ content }) {
     const el = makeElement({
       name: 'test',

@@ -7,8 +7,8 @@ const T = {
   context: Context,
   clockwise: {
     'bottom-right'() {
-      const res = roundedCorner({ x: 100, y: 0 }, { x: 90, y: 10 })
-      equal(res, 'C 100 5, 95 10, 90 10')
+      const res = roundedCorner({ x: 10, y: 0 }, { x: 0, y: 10 })
+      equal(res, 'C 10 5, 5 10, 0 10')
     },
     'bottom-left'() {
       const res = roundedCorner({ x: 10, y: 10 }, { x: 0, y: 0 })

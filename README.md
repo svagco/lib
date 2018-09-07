@@ -14,6 +14,10 @@ yarn add -E @svag/lib
 - [API](#api)
   * [`makeElement(options: MakeElementOptions): string`](#makeelementoptions-makeelementoptions-string)
     * [`MakeElementOptions`](#makeelementoptions)
+  * [`roundedCorner(from: Coordinate, to: Coordinate): string`](#roundedcornerfrom-coordinateto-coordinate-string)
+    * [`Coordinate`](#coordinate)
+- [Element](#element)
+  * [`svg(from: Coordinate, to: Coordinate): string`](#svgfrom-coordinateto-coordinate-string)
 - [TODO](#todo)
 - [Copyright](#copyright)
 
@@ -62,6 +66,78 @@ console.log(element)
 
 ```svg
 <rect test="true" font-size="12px"><circle cx="50" cy="50" r="25"/></rect>
+```
+
+### `roundedCorner(`<br/>&nbsp;&nbsp;`from: Coordinate,`<br/>&nbsp;&nbsp;`to: Coordinate,`<br/>`): string`
+
+Create a `C` directive to include in a `path` element to create a rounded corner.
+
+__<a name="coordinate">`Coordinate`</a>__: A coordinate used for drawing.
+
+| Name | Type | Description | Default |
+| ---- | ---- | ----------- | ------- |
+| __x*__ | _number_ | The `x` position of the coordinate. | - |
+| __y*__ | _number_ | The `y` position of the coordinate. | - |
+
+<table>
+ <thead>
+  <th>
+   <td>Direction</td>
+   <td>Output</td>
+   <td>Preview</td>
+  </th>
+ </thead>
+ <tbody>
+  <tr>
+   <td>Top Right</td>
+   <td>
+
+```svg
+C 10 5, 5 10, 0 10
+```
+</td>
+   <td>
+
+![top-right](images/corners/top-right.svg)
+</td>
+  </tr>
+ </tbody>
+</table>
+## Element
+
+This section describes how to create individual elements.
+
+### `svg(`<br/>&nbsp;&nbsp;`from: Coordinate,`<br/>&nbsp;&nbsp;`to: Coordinate,`<br/>`): string`
+
+Generate an `svg` element with given content and dimensions.
+
+```js
+import { svg } from '../../src'
+
+const stretchedSvg = svg({
+  height: 100,
+  width: 100,
+  content: '<example />',
+})
+
+const fixedSvg = svg({
+  height: 100,
+  width: 100,
+  content: '<example />',
+  stretch: false,
+})
+
+console.log(stretchedSvg)
+console.log('\n====\n')
+console.log(fixedSvg)
+```
+
+```xml
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0, 0, 100, 100" width="100px" height="100px"><example /></svg>
+
+====
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0, 0, 100, 100" width="100px" height="100px"><example /></svg>
 ```
 
 ## TODO
