@@ -12,6 +12,9 @@ export default class Context {
   async _init() {
     LOG('init context')
   }
+  get content() {
+    return '<rect/>'
+  }
   /**
    * Example method.
    */

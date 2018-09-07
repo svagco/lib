@@ -11,8 +11,9 @@
     "test-watch": "yarn test -w",
     "lint": "eslint .",
     "doc": "NODE_DEBUG=doc doc documentary -o README.md",
+    "d": "NODE_DEBUG=doc doc src/index.js -g",
     "b": "alamode src -o build",
-    "build": "yarn-s b doc",
+    "build": "yarn-s b doc d",
     "rec": "NODE_DEBUG=appshot appshot -T 23 -a Terminal -y 150 -f",
     "e": "node example",
     "example/": "yarn e example/example.js"
@@ -26,7 +27,21 @@
   },
   "keywords": [
     "lib",
-    "svag"
+    "svag",
+    "svg",
+    "generation",
+    "image",
+    "web",
+    "png",
+    "jpeg",
+    "gif",
+    "vector",
+    "graphics",
+    "picture",
+    "terminal",
+    "chrome",
+    "safari",
+    "browser"
   ],
   "author": "Anton <anton@adc.sh>",
   "license": "MIT",
@@ -36,9 +51,9 @@
   "homepage": "https://github.com/svagjs/lib#readme",
   "devDependencies": {
     "alamode": "1.4.0",
-    "documentary": "1.11.0",
+    "documentary": "1.14.0",
     "eslint-config-artdeco": "1.0.1",
     "yarn-s": "1.1.0",
-    "zoroaster": "3.0.0"
+    "zoroaster": "3.0.3"
   }
 }
