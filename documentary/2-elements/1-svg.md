@@ -1,12 +1,13 @@
 
 ```### svg => string
 [
-  ["from", "Coordinate"],
-  ["to", "Coordinate"]
+  ["options", "SVGOption"]
 ]
 ```
 
 Generate an `svg` element with given content and dimensions.
+
+%TYPEDEF types/index.xml SVGOptions%
 
 %EXAMPLE: example/elements/svg.js%
 

@@ -17,7 +17,8 @@ yarn add -E @svag/lib
   * [`roundedCorner(from: Coordinate, to: Coordinate): string`](#roundedcornerfrom-coordinateto-coordinate-string)
     * [`Coordinate`](#coordinate)
 - [Element](#element)
-  * [`svg(from: Coordinate, to: Coordinate): string`](#svgfrom-coordinateto-coordinate-string)
+  * [`svg(options: SVGOption): string`](#svgoptions-svgoption-string)
+    * [`SVGOptions`](#svgoptions)
 - [TODO](#todo)
 - [Copyright](#copyright)
 
@@ -107,9 +108,18 @@ C 10 5, 5 10, 0 10
 
 This section describes how to create individual elements.
 
-### `svg(`<br/>&nbsp;&nbsp;`from: Coordinate,`<br/>&nbsp;&nbsp;`to: Coordinate,`<br/>`): string`
+### `svg(`<br/>&nbsp;&nbsp;`options: SVGOption,`<br/>`): string`
 
 Generate an `svg` element with given content and dimensions.
+
+__<a name="svgoptions">`SVGOptions`</a>__: An option for creating an svg.
+
+| Name | Type | Description | Default |
+| ---- | ---- | ----------- | ------- |
+| __width*__ | _number_ | The width of the `svg`. | - |
+| __height*__ | _number_ | The height of the `svg`. | - |
+| __content*__ | _string_ | The content to put inside of the `svg`. | - |
+| stretch | _boolean_ | Expand the `svg` to the width of the container by not setting `width` and `height` attributes. | `true` |
 
 ```js
 import { svg } from '../../src'
