@@ -60,7 +60,7 @@ const element = makeElement({
 console.log(element)
 ```
 
-```
+```svg
 <rect test="true" font-size="12px"><circle cx="50" cy="50" r="25"/></rect>
 ```
 
