@@ -18,7 +18,7 @@ yarn add -E @svag/lib
     * [`Coordinate`](#coordinate)
     * [Clockwise](#clockwise)
     * [Anticlockwise](#anticlockwise)
-- [Element](#element)
+- [Elements](#elements)
   * [`svg(options: SVGOption): string`](#svgoptions-svgoption-string)
     * [`SVGOptions`](#svgoptions)
 - [TODO](#todo)
@@ -271,6 +271,32 @@ C 35 1, 10 26, 10 51
 </td>
   </tr>
   <tr>
+   <td>Bottom Left</td>
+   <td>
+
+```js
+import { roundedCorner } from '../../src'
+const C = roundedCorner({
+  x: 1,
+  y: 0,
+}, {
+  x: 51,
+  y: 50,
+}, true)
+```
+   </td>
+   <td>
+
+```svg
+C 1 25, 26 50, 51 50
+```
+</td>
+   <td>
+
+![anticlockwise bottom-left](images/corners/abottom-left.svg)
+</td>
+  </tr>
+  <tr>
    <td>Bottom Right</td>
    <td>
 
@@ -297,36 +323,10 @@ C 26 60, 51 35, 51 10
 ![anticlockwise bottom-right](images/corners/abottom-right.svg)
 </td>
   </tr>
-  <tr>
-   <td>Bottom Left</td>
-   <td>
-
-```js
-import { roundedCorner } from '../../src'
-const C = roundedCorner({
-  x: 1,
-  y: 0,
-}, {
-  x: 51,
-  y: 50,
-}, true)
-```
-   </td>
-   <td>
-
-```svg
-C 1 25, 26 50, 51 50
-```
-</td>
-   <td>
-
-![anticlockwise bottom-left](images/corners/abottom-left.svg)
-</td>
-  </tr>
  </tbody>
 </table>
 
-## Element
+## Elements
 
 This section describes how to create individual elements.
 

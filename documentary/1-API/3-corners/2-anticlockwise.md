@@ -42,21 +42,6 @@
 </td>
   </tr>
   <tr>
-   <td>Bottom Right</td>
-   <td>
-
-%EXAMPLE: example/corners/abottom-right.js%
-   </td>
-   <td>
-
-%FORK-svg example example/corners/abottom-right%
-  </td>
-   <td>
-
-![anticlockwise bottom-right](images/corners/abottom-right.svg)
-</td>
-  </tr>
-  <tr>
    <td>Bottom Left</td>
    <td>
 
@@ -69,6 +54,21 @@
    <td>
 
 ![anticlockwise bottom-left](images/corners/abottom-left.svg)
+</td>
+  </tr>
+  <tr>
+   <td>Bottom Right</td>
+   <td>
+
+%EXAMPLE: example/corners/abottom-right.js%
+   </td>
+   <td>
+
+%FORK-svg example example/corners/abottom-right%
+  </td>
+   <td>
+
+![anticlockwise bottom-right](images/corners/abottom-right.svg)
 </td>
   </tr>
  </tbody>
