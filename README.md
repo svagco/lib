@@ -14,7 +14,7 @@ yarn add -E @svag/lib
 - [API](#api)
   * [`makeElement(options: MakeElementOptions): string`](#makeelementoptions-makeelementoptions-string)
     * [`MakeElementOptions`](#makeelementoptions)
-  * [`roundedCorner(from: Coordinate, to: Coordinate): string`](#roundedcornerfrom-coordinateto-coordinate-string)
+  * [`roundedCorner(from: Coordinate, to: Coordinate, anticlockwise?: boolean): string`](#roundedcornerfrom-coordinateto-coordinateanticlockwise-boolean-string)
     * [`Coordinate`](#coordinate)
     * [Clockwise](#clockwise)
     * [Anticlockwise](#anticlockwise)
@@ -71,9 +71,9 @@ console.log(element)
 <rect test="true" font-size="12px"><circle cx="50" cy="50" r="25"/></rect>
 ```
 
-### `roundedCorner(`<br/>&nbsp;&nbsp;`from: Coordinate,`<br/>&nbsp;&nbsp;`to: Coordinate,`<br/>`): string`
+### `roundedCorner(`<br/>&nbsp;&nbsp;`from: Coordinate,`<br/>&nbsp;&nbsp;`to: Coordinate,`<br/>&nbsp;&nbsp;`anticlockwise?: boolean,`<br/>`): string`
 
-Create a `C` directive to include in a `path` element to create a rounded corner.
+Create a `C` directive to include in a `path` element to create a rounded corner. If `anticlockwise` argument is passed, the path will follow the counter-clockwise movement.
 
 __<a name="coordinate">`Coordinate`</a>__: A coordinate used for drawing.
 
@@ -128,10 +128,10 @@ C 25 1, 50 26, 50 51
 import { roundedCorner } from '../../src'
 
 const C = roundedCorner({
-  x: 50,
+  x: 60,
   y: 0,
 }, {
-  x: 0,
+  x: 10,
   y: 50,
 })
 ```
@@ -139,7 +139,7 @@ const C = roundedCorner({
    <td>
 
 ```svg
-C 50 25, 25 50, 0 50
+C 60 25, 35 50, 10 50
 ```
   </td>
    <td>
@@ -155,18 +155,18 @@ C 50 25, 25 50, 0 50
 import { roundedCorner } from '../../src'
 
 const C = roundedCorner({
-  x: 51,
-  y: 50,
+  x: 60,
+  y: 60,
 }, {
-  x: 1,
-  y: 0,
+  x: 10,
+  y: 10,
 })
 ```
    </td>
    <td>
 
 ```svg
-C 26 50, 1 25, 1 0
+C 35 60, 10 35, 10 10
 ```
 </td>
    <td>
@@ -183,17 +183,17 @@ import { roundedCorner } from '../../src'
 
 const C = roundedCorner({
   x: 1,
-  y: 51,
+  y: 60,
 }, {
   x: 51,
-  y: 1,
+  y: 10,
 })
 ```
    </td>
    <td>
 
 ```svg
-C 1 26, 26 1, 51 1
+C 1 35, 26 10, 51 10
 ```
 </td>
    <td>
@@ -222,24 +222,25 @@ C 1 26, 26 1, 51 1
 
 ```js
 import { roundedCorner } from '../../src'
+
 const C = roundedCorner({
-  x: 0,
-  y: 1,
+  x: 60,
+  y: 60,
 }, {
-  x: 50,
-  y: 51,
-})
+  x: 10,
+  y: 10,
+}, true)
 ```
   </td>
    <td>
 
 ```svg
-C 25 1, 50 26, 50 51
+C 60 35, 35 10, 10 10
 ```
   </td>
    <td>
 
-![top-right](images/corners/top-right.svg)
+![top-right](images/corners/atop-right.svg)
 </td>
   </tr>
   <tr>
@@ -250,23 +251,23 @@ C 25 1, 50 26, 50 51
 import { roundedCorner } from '../../src'
 
 const C = roundedCorner({
-  x: 50,
-  y: 0,
+  x: 1,
+  y: 60,
 }, {
-  x: 0,
-  y: 50,
-})
+  x: 51,
+  y: 10,
+}, true)
 ```
    </td>
    <td>
 
 ```svg
-C 50 25, 25 50, 0 50
+C 26 60, 51 35, 51 10
 ```
   </td>
    <td>
 
-![bottom-right](images/corners/bottom-right.svg)
+![bottom-right](images/corners/abottom-right.svg)
 </td>
   </tr>
   <tr>
@@ -275,25 +276,24 @@ C 50 25, 25 50, 0 50
 
 ```js
 import { roundedCorner } from '../../src'
-
 const C = roundedCorner({
-  x: 51,
-  y: 50,
-}, {
   x: 1,
   y: 0,
-})
+}, {
+  x: 51,
+  y: 50,
+}, true)
 ```
    </td>
    <td>
 
 ```svg
-C 26 50, 1 25, 1 0
+C 1 25, 26 50, 51 50
 ```
 </td>
    <td>
 
-![bottom-left](images/corners/bottom-left.svg)
+![bottom-left](images/corners/abottom-left.svg)
 </td>
   </tr>
   <tr>
@@ -304,23 +304,23 @@ C 26 50, 1 25, 1 0
 import { roundedCorner } from '../../src'
 
 const C = roundedCorner({
-  x: 1,
-  y: 51,
-}, {
-  x: 51,
+  x: 60,
   y: 1,
-})
+}, {
+  x: 10,
+  y: 51,
+}, true)
 ```
    </td>
    <td>
 
 ```svg
-C 1 26, 26 1, 51 1
+C 35 1, 10 26, 10 51
 ```
 </td>
    <td>
 
-![top-left](images/corners/top-left.svg)
+![top-left](images/corners/atop-left.svg)
 </td>
   </tr>
  </tbody>
