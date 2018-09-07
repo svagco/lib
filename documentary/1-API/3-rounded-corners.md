@@ -12,22 +12,72 @@ Create a `C` directive to include in a `path` element to create a rounded corner
 
 <table>
  <thead>
-  <th>
-   <td>Direction</td>
-   <td>Output</td>
-   <td>Preview</td>
-  </th>
+  <tr>
+   <th>Direction</th>
+   <th>Usage</th>
+   <th>Output</th>
+   <th>Preview</th>
+  </tr>
  </thead>
  <tbody>
   <tr>
    <td>Top Right</td>
    <td>
 
+%EXAMPLE: example/corners/top-right.js%
+  </td>
+   <td>
+
 %FORK-svg example example/corners/top-right%
-</td>
+  </td>
    <td>
 
 ![top-right](images/corners/top-right.svg)
+</td>
+  </tr>
+  <tr>
+   <td>Bottom Right</td>
+   <td>
+
+%EXAMPLE: example/corners/bottom-right.js%
+   </td>
+   <td>
+
+%FORK-svg example example/corners/bottom-right%
+  </td>
+   <td>
+
+![bottom-right](images/corners/bottom-right.svg)
+</td>
+  </tr>
+  <tr>
+   <td>Bottom Left</td>
+   <td>
+
+%EXAMPLE: example/corners/bottom-left.js%
+   </td>
+   <td>
+
+%FORK-svg example example/corners/bottom-left%
+</td>
+   <td>
+
+![bottom-left](images/corners/bottom-left.svg)
+</td>
+  </tr>
+  <tr>
+   <td>Top Left</td>
+   <td>
+
+%EXAMPLE: example/corners/top-left.js%
+   </td>
+   <td>
+
+%FORK-svg example example/corners/top-left%
+</td>
+   <td>
+
+![top-left](images/corners/top-left.svg)
 </td>
   </tr>
  </tbody>

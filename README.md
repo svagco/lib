@@ -82,28 +82,124 @@ __<a name="coordinate">`Coordinate`</a>__: A coordinate used for drawing.
 
 <table>
  <thead>
-  <th>
-   <td>Direction</td>
-   <td>Output</td>
-   <td>Preview</td>
-  </th>
+  <tr>
+   <th>Direction</th>
+   <th>Usage</th>
+   <th>Output</th>
+   <th>Preview</th>
+  </tr>
  </thead>
  <tbody>
   <tr>
    <td>Top Right</td>
    <td>
 
-```svg
-C 10 5, 5 10, 0 10
+```js
+import { roundedCorner } from '../../src'
+const C = roundedCorner({
+  x: 0,
+  y: 1,
+}, {
+  x: 50,
+  y: 51,
+})
 ```
-</td>
+  </td>
+   <td>
+
+```svg
+C 25 1, 50 26, 50 51
+```
+  </td>
    <td>
 
 ![top-right](images/corners/top-right.svg)
 </td>
   </tr>
+  <tr>
+   <td>Bottom Right</td>
+   <td>
+
+```js
+import { roundedCorner } from '../../src'
+
+const C = roundedCorner({
+  x: 50,
+  y: 0,
+}, {
+  x: 0,
+  y: 50,
+})
+```
+   </td>
+   <td>
+
+```svg
+C 50 25, 25 50, 0 50
+```
+  </td>
+   <td>
+
+![bottom-right](images/corners/bottom-right.svg)
+</td>
+  </tr>
+  <tr>
+   <td>Bottom Left</td>
+   <td>
+
+```js
+import { roundedCorner } from '../../src'
+
+const C = roundedCorner({
+  x: 51,
+  y: 50,
+}, {
+  x: 1,
+  y: 0,
+})
+```
+   </td>
+   <td>
+
+```svg
+C 26 50, 1 25, 1 0
+```
+</td>
+   <td>
+
+![bottom-left](images/corners/bottom-left.svg)
+</td>
+  </tr>
+  <tr>
+   <td>Top Left</td>
+   <td>
+
+```js
+import { roundedCorner } from '../../src'
+
+const C = roundedCorner({
+  x: 1,
+  y: 51,
+}, {
+  x: 51,
+  y: 1,
+})
+```
+   </td>
+   <td>
+
+```svg
+C 1 26, 26 1, 51 1
+```
+</td>
+   <td>
+
+![top-left](images/corners/top-left.svg)
+</td>
+  </tr>
  </tbody>
 </table>
+
 ## Element
 
 This section describes how to create individual elements.
