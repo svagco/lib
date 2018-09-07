@@ -240,60 +240,7 @@ C 60 35, 35 10, 10 10
   </td>
    <td>
 
-![top-right](images/corners/atop-right.svg)
-</td>
-  </tr>
-  <tr>
-   <td>Bottom Right</td>
-   <td>
-
-```js
-import { roundedCorner } from '../../src'
-
-const C = roundedCorner({
-  x: 1,
-  y: 60,
-}, {
-  x: 51,
-  y: 10,
-}, true)
-```
-   </td>
-   <td>
-
-```svg
-C 26 60, 51 35, 51 10
-```
-  </td>
-   <td>
-
-![bottom-right](images/corners/abottom-right.svg)
-</td>
-  </tr>
-  <tr>
-   <td>Bottom Left</td>
-   <td>
-
-```js
-import { roundedCorner } from '../../src'
-const C = roundedCorner({
-  x: 1,
-  y: 0,
-}, {
-  x: 51,
-  y: 50,
-}, true)
-```
-   </td>
-   <td>
-
-```svg
-C 1 25, 26 50, 51 50
-```
-</td>
-   <td>
-
-![bottom-left](images/corners/abottom-left.svg)
+![anticlockwise top-right](images/corners/atop-right.svg)
 </td>
   </tr>
   <tr>
@@ -320,7 +267,60 @@ C 35 1, 10 26, 10 51
 </td>
    <td>
 
-![top-left](images/corners/atop-left.svg)
+![anticlockwise top-left](images/corners/atop-left.svg)
+</td>
+  </tr>
+  <tr>
+   <td>Bottom Right</td>
+   <td>
+
+```js
+import { roundedCorner } from '../../src'
+
+const C = roundedCorner({
+  x: 1,
+  y: 60,
+}, {
+  x: 51,
+  y: 10,
+}, true)
+```
+   </td>
+   <td>
+
+```svg
+C 26 60, 51 35, 51 10
+```
+  </td>
+   <td>
+
+![anticlockwise bottom-right](images/corners/abottom-right.svg)
+</td>
+  </tr>
+  <tr>
+   <td>Bottom Left</td>
+   <td>
+
+```js
+import { roundedCorner } from '../../src'
+const C = roundedCorner({
+  x: 1,
+  y: 0,
+}, {
+  x: 51,
+  y: 50,
+}, true)
+```
+   </td>
+   <td>
+
+```svg
+C 1 25, 26 50, 51 50
+```
+</td>
+   <td>
+
+![anticlockwise bottom-left](images/corners/abottom-left.svg)
 </td>
   </tr>
  </tbody>
