@@ -66,6 +66,7 @@ export const minify = (svg) => {
  * @param {SVGOptions} options An option for creating an svg.
  * @param {number} options.width The width of the `svg`.
  * @param {number} options.height The height of the `svg`.
+ * @param {string} options.content The content to put inside of the `svg`.
  * @param {boolean} [options.stretch=true] Expand the `svg` to the width of the container by not setting `width` and `height` attributes. Default `true`.
  */
 export const svg = (options) => {
@@ -90,6 +91,7 @@ export const svg = (options) => {
  * @typedef {Object} SVGOptions An option for creating an svg.
  * @prop {number} width The width of the `svg`.
  * @prop {number} height The height of the `svg`.
+ * @prop {string} content The content to put inside of the `svg`.
  * @prop {boolean} [stretch=true] Expand the `svg` to the width of the container by not setting `width` and `height` attributes. Default `true`.
  *
  * @typedef {Object} Coordinate A coordinate used for drawing.
