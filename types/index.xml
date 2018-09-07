@@ -1,4 +1,12 @@
 <types>
+  <type name="Coordinate" desc="A coordinate used for drawing.">
+    <prop number name="x">
+      The `x` position of the coordinate.
+    </prop>
+    <prop number name="y">
+      The `y` position of the coordinate.
+    </prop>
+  </type>
   <type name="MakeElementOptions" desc="Options to make a new element.">
     <prop string name="name">
       The name of the new element element.
