@@ -16,6 +16,8 @@ yarn add -E @svag/lib
     * [`MakeElementOptions`](#makeelementoptions)
   * [`roundedCorner(from: Coordinate, to: Coordinate): string`](#roundedcornerfrom-coordinateto-coordinate-string)
     * [`Coordinate`](#coordinate)
+    * [Clockwise](#clockwise)
+    * [Anticlockwise](#anticlockwise)
 - [Element](#element)
   * [`svg(options: SVGOption): string`](#svgoptions-svgoption-string)
     * [`SVGOptions`](#svgoptions)
@@ -79,6 +81,130 @@ __<a name="coordinate">`Coordinate`</a>__: A coordinate used for drawing.
 | ---- | ---- | ----------- | ------- |
 | __x*__ | _number_ | The `x` position of the coordinate. | - |
 | __y*__ | _number_ | The `y` position of the coordinate. | - |
+
+<a name="clockwise">Clockwise</a>: The table below shows the corners drawn clockwise.
+
+<table>
+ <thead>
+  <tr>
+   <th>Direction</th>
+   <th>Usage</th>
+   <th>Output</th>
+   <th>Preview</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>Top Right</td>
+   <td>
+
+```js
+import { roundedCorner } from '../../src'
+const C = roundedCorner({
+  x: 0,
+  y: 1,
+}, {
+  x: 50,
+  y: 51,
+})
+```
+  </td>
+   <td>
+
+```svg
+C 25 1, 50 26, 50 51
+```
+  </td>
+   <td>
+
+![top-right](images/corners/top-right.svg)
+</td>
+  </tr>
+  <tr>
+   <td>Bottom Right</td>
+   <td>
+
+```js
+import { roundedCorner } from '../../src'
+
+const C = roundedCorner({
+  x: 50,
+  y: 0,
+}, {
+  x: 0,
+  y: 50,
+})
+```
+   </td>
+   <td>
+
+```svg
+C 50 25, 25 50, 0 50
+```
+  </td>
+   <td>
+
+![bottom-right](images/corners/bottom-right.svg)
+</td>
+  </tr>
+  <tr>
+   <td>Bottom Left</td>
+   <td>
+
+```js
+import { roundedCorner } from '../../src'
+
+const C = roundedCorner({
+  x: 51,
+  y: 50,
+}, {
+  x: 1,
+  y: 0,
+})
+```
+   </td>
+   <td>
+
+```svg
+C 26 50, 1 25, 1 0
+```
+</td>
+   <td>
+
+![bottom-left](images/corners/bottom-left.svg)
+</td>
+  </tr>
+  <tr>
+   <td>Top Left</td>
+   <td>
+
+```js
+import { roundedCorner } from '../../src'
+
+const C = roundedCorner({
+  x: 1,
+  y: 51,
+}, {
+  x: 51,
+  y: 1,
+})
+```
+   </td>
+   <td>
+
+```svg
+C 1 26, 26 1, 51 1
+```
+</td>
+   <td>
+
+![top-left](images/corners/top-left.svg)
+</td>
+  </tr>
+ </tbody>
+</table>
+
+<a name="anticlockwise">Anticlockwise</a>: The table below shows the corners drawn anticlockwise.
 
 <table>
  <thead>
@@ -223,27 +349,37 @@ import { svg } from '../../src'
 const stretchedSvg = svg({
   height: 100,
   width: 100,
-  content: '<example />',
+  content: '\n  <example />\n',
 })
+
+console.log(stretchedSvg)
+```
+
+```xml
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0, 0, 100, 100">
+  <example />
+</svg>
+```
+
+To generate an `svg` which will not adjust its size to the viewport, the `stretch` option needs to be set to `false`.
+
+```js
+import { svg } from '../../src'
 
 const fixedSvg = svg({
   height: 100,
   width: 100,
-  content: '<example />',
+  content: '\n  <example />\n',
   stretch: false,
 })
 
-console.log(stretchedSvg)
-console.log('\n====\n')
 console.log(fixedSvg)
 ```
 
 ```xml
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0, 0, 100, 100" width="100px" height="100px"><example /></svg>
-
-====
-
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0, 0, 100, 100" width="100px" height="100px"><example /></svg>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0, 0, 100, 100" width="100px" height="100px">
+  <example />
+</svg>
 ```
 
 ## TODO

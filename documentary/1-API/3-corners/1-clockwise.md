@@ -1,5 +1,5 @@
 
-[Anticlockwise](t): The table below shows the corners drawn anticlockwise.
+[Clockwise](t): The table below shows the corners drawn clockwise.
 
 <table>
  <thead>

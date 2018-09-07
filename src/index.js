@@ -70,7 +70,7 @@ export const minify = (svg) => {
  * @param {boolean} [options.stretch=true] Expand the `svg` to the width of the container by not setting `width` and `height` attributes. Default `true`.
  */
 export const svg = (options) => {
-  const { width, height, stretch, content } = options
+  const { width, height, stretch = true, content } = options
   const res = makeElement({
     name: 'svg',
     attributes: {

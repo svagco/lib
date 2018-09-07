@@ -12,3 +12,9 @@ Generate an `svg` element with given content and dimensions.
 %EXAMPLE: example/elements/svg.js%
 
 %FORK-xml example example/elements/svg%
+
+To generate an `svg` which will not adjust its size to the viewport, the `stretch` option needs to be set to `false`.
+
+%EXAMPLE: example/elements/svg-fixed.js%
+
+%FORK-xml example example/elements/svg-fixed%
