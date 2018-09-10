@@ -1,6 +1,6 @@
 import { equal, throws } from 'zoroaster/assert'
 import Context from '../context'
-import makeElement from '../../src/lib/make-element'
+import makeElement, { makeAttrs } from '../../src/lib/make-element'
 
 /** @type {Object.<string, (c: Context)>} */
 const T = {
@@ -96,4 +96,20 @@ const T = {
   },
 }
 
+const MakeAttrs = {
+  'makes attributes with new lines'() {
+    const res = makeAttrs({
+      hello: 'world',
+      test: 'test '.repeat(20).trim(),
+      test2: 'test2 '.repeat(20).trim(),
+      test3: 'test3 '.repeat(20).trim(),
+    }, 'el')
+    equal(res, ` hello="world" test="test test test test test test test test test test test test test test test test test test test test"
+    test2="test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2"
+    test3="test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3"`)
+  },
+}
+
 export default T
+
+export { MakeAttrs }

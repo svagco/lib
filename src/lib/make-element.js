@@ -11,13 +11,39 @@ export const makeElement = (options) => {
     name, content, attributes = {},
   } = options
   if (!name) throw new Error('Expected to see an element name.')
-  const attrs = Object.keys(attributes).reduce((acc, key) => {
-    const val = attributes[key]
-    if (val === undefined) return acc
-    return `${acc} ${key}="${val}"`
-  }, '')
+  const attrs = makeAttrs(attributes, name)
   const c = makeContent(content)
   const res = wrap(name, attrs, c)
+  return res
+}
+
+export const makeAttrs = (attributes, name) => {
+  const indentLength = name.length + 2 // e.g., `<svg
+  const i = ' '.repeat(indentLength)
+  const attrs = Object.keys(attributes)
+    .filter((key) => {
+      const val = attributes[key]
+      return val !== undefined
+    }).map((key) => {
+      const val = attributes[key]
+      const s = `${key}="${val}"`
+      return s
+    })
+  const { acc: res } = attrs.reduce(({ prevLineLength, acc }, attr) => {
+    if (prevLineLength > 100) {
+      const s = `${i}${attr}`
+      return {
+        prevLineLength: s.length,
+        acc: `${acc}\n${s}`,
+      }
+    }
+    const newAcc = `${acc} ${attr}`
+    return {
+      prevLineLength: prevLineLength + attr.length + 1,
+      acc: newAcc,
+    }
+  }, { prevLineLength: indentLength, acc: '' })
+
   return res
 }
 
