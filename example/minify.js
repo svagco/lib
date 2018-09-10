@@ -1,3 +1,4 @@
+/* start example */
 import { minify } from '../src'
 
 const svg = `
@@ -16,4 +17,5 @@ const svg = `
 `
 
 const minified = minify(svg)
+/* end example */
 console.log(minified)

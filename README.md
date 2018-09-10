@@ -11,19 +11,39 @@ yarn add -E @svag/lib
 ## Table Of Contents
 
 - [Table Of Contents](#table-of-contents)
+- [Types](#types)
+  * [`Coordinate`](#coordinate)
+  * [`length`](#length)
+  * [`percentage`](#percentage)
 - [API](#api)
-  * [`makeElement(options: MakeElementOptions): string`](#makeelementoptions-makeelementoptions-string)
+  * [`makeElement(name: string, options?: MakeElementOptions): string`](#makeelementname-stringoptions-makeelementoptions-string)
     * [`MakeElementOptions`](#makeelementoptions)
   * [`minify(svg: string): string`](#minifysvg-string-string)
   * [`roundedCorner(from: Coordinate, to: Coordinate, anticlockwise?: boolean): string`](#roundedcornerfrom-coordinateto-coordinateanticlockwise-boolean-string)
-    * [`Coordinate`](#coordinate)
     * [Clockwise](#clockwise)
     * [Anticlockwise](#anticlockwise)
 - [Elements](#elements)
   * [`svg(options: SVGOption): string`](#svgoptions-svgoption-string)
     * [`SVGOptions`](#svgoptions)
+  * [`rect(attributes: RectAttributes): string`](#rectattributes-rectattributes-string)
+    * [`RectAttributes`](#rectattributes)
 - [TODO](#todo)
 - [Copyright](#copyright)
+
+## Types
+
+There are some common types used by various methods. They are described in this section.
+
+__<a name="coordinate">`Coordinate`</a>__: A coordinate used for drawing.
+
+| Name | Type | Description | Default |
+| ---- | ---- | ----------- | ------- |
+| __x*__ | _number_ | The `x` position of the coordinate. | - |
+| __y*__ | _number_ | The `y` position of the coordinate. | - |
+
+`string|number` __<a name="length">`length`</a>__: A length is a distance measurement, given as a number along with a unit.
+
+`string` __<a name="percentage">`percentage`</a>__: Percentages are specified as a number followed by a `%` character.
 
 ## API
 
@@ -33,43 +53,58 @@ The package library exports a number of functions, including `makeElement` and `
 import { makeElement, minify } from '@svag/lib'
 ```
 
-### `makeElement(`<br/>&nbsp;&nbsp;`options: MakeElementOptions,`<br/>`): string`
+### `makeElement(`<br/>&nbsp;&nbsp;`name: string,`<br/>&nbsp;&nbsp;`options?: MakeElementOptions,`<br/>`): string`
 
-This function will create an element as a string given the options.
+This function will create an element as a string given its name and the options. The attributes will be split by new lines whenever the line width reaches the length of 100 symbols, and each line of the content will be indented by 2 spaces as well.
 
 __<a name="makeelementoptions">`MakeElementOptions`</a>__: Options to make a new element.
 
 | Name | Type | Description | Default |
 | ---- | ---- | ----------- | ------- |
-| __name*__ | _string_ | The name of the new element element. | - |
-| content | _string_ | The content to write inside of the element. | - |
+| content | _string\|string[]_ | The content to write inside of the element, such as string or an array of strings. | - |
 | attributes | _object_ | A map of attributes to add to the element. | - |
 
 ```js
 import { makeElement } from '@svag/lib'
 
-const circle = makeElement({
-  name: 'circle',
+const circle = makeElement('circle', {
   attributes: {
     cx: 50,
     cy: 50,
     r: 25,
   },
 })
-const element = makeElement({
-  name: 'rect',
+const rect = makeElement('rect', {
+  attributes: {
+    width: '100',
+    height: '100',
+  },
+})
+const g = makeElement('g', {
+  attributes: {
+    fill: 'green',
+  },
+  // 1. SET Single content attribute
+  content: rect,
+})
+const element = makeElement('g', {
+  name: 'g',
   attributes: {
     test: true,
     'font-size': '12px',
   },
-  content: circle,
+  // 2. SET Multiple content attributes
+  content: [circle, g],
 })
-
-console.log(element)
 ```
 
 ```svg
-<rect test="true" font-size="12px"><circle cx="50" cy="50" r="25"/></rect>
+<g test="true" font-size="12px">
+  <circle cx="50" cy="50" r="25"/>
+  <g fill="green">
+    <rect width="100" height="100"/>
+  </g>
+</g>
 ```
 
 ### `minify(`<br/>&nbsp;&nbsp;`svg: string,`<br/>`): string`
@@ -95,7 +130,6 @@ const svg = `
 `
 
 const minified = minify(svg)
-console.log(minified)
 ```
 
 ```svg
@@ -105,13 +139,6 @@ console.log(minified)
 ### `roundedCorner(`<br/>&nbsp;&nbsp;`from: Coordinate,`<br/>&nbsp;&nbsp;`to: Coordinate,`<br/>&nbsp;&nbsp;`anticlockwise?: boolean,`<br/>`): string`
 
 Create a `C` directive to include in a `path` element to create a rounded corner. If `anticlockwise` argument is passed, the path will follow the counter-clockwise movement.
-
-__<a name="coordinate">`Coordinate`</a>__: A coordinate used for drawing.
-
-| Name | Type | Description | Default |
-| ---- | ---- | ----------- | ------- |
-| __x*__ | _number_ | The `x` position of the coordinate. | - |
-| __y*__ | _number_ | The `y` position of the coordinate. | - |
 
 <a name="clockwise">Clockwise</a>: The table below shows the corners drawn clockwise.
 
@@ -380,14 +407,13 @@ import { svg } from '@svag/lib'
 const stretchedSvg = svg({
   height: 100,
   width: 100,
-  content: '\n  <example />\n',
+  content: '<example />',
 })
-
-console.log(stretchedSvg)
 ```
 
-```xml
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0, 0, 100, 100">
+```svg
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0, 0, 100, 100">
   <example />
 </svg>
 ```
@@ -400,24 +426,59 @@ import { svg } from '@svag/lib'
 const fixedSvg = svg({
   height: 100,
   width: 100,
-  content: '\n  <example />\n',
+  content: '<example />',
   stretch: false,
 })
-
-console.log(fixedSvg)
 ```
 
-```xml
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0, 0, 100, 100" width="100px" height="100px">
+```svg
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0, 0, 100, 100" width="100px" height="100px">
   <example />
 </svg>
 ```
 
+### `rect(`<br/>&nbsp;&nbsp;`attributes: RectAttributes,`<br/>`): string`
+
+Create a `<rect>` element.
+
+__<a name="rectattributes">`RectAttributes`</a>__: Non-global attributes for the element.
+
+| Name | Type | Description | Default |
+| ---- | ---- | ----------- | ------- |
+| x | _length\|percentage_ | This attribute determines the x coordinate of the rect. | `0` |
+| y | _length\|percentage_ | This attribute determines the y coordinate of the rect. | `0` |
+| width | _'auto'\|length\|percentage_ | This attribute determines the width of the rect. | `auto` |
+| height | _'auto'\|length\|percentage_ | This attribute determines the height of the rect. | `auto` |
+| rx | _'auto'\|length\|percentage_ | This attribute determines the horizontal corner radius of the rect. | `auto` |
+| ry | _'auto'\|length\|percentage_ | This attribute determines the vertical corner radius of the rect. | `auto` |
+| pathLength | _number_ | This attribute lets specify the total length for the path, in user units. | - |
+
+```js
+import { rect } from '@svag/lib'
+
+const image = rect({
+  height: 100,
+  width: 100,
+  rx: '0.5em',
+  ry: '0.5em',
+})
+```
+
+```svg
+<rect height="100" width="100" rx="0.5em" ry="0.5em"/>
+```
+
 ## TODO
 
-- [ ] Create an alias for each SVG element, e.g., `circle`, `rect`, _etc_.
+- [ ] Create an alias for each SVG element, e.g., `circle`, _etc_, and parse their documentation from `MDN`.
+- [ ] Update `documentary` to make sure that types are linked to their description.
+- [ ] Update `alamode` to be able to write XML syntax (JSX transform).
+- [ ] Update `minify` to work correctly with attributes on new lines.
 
 ## Copyright
+
+Some of the element documentation, including `rect` was taken directly from [MDN](https://developer.mozilla.org/en-US/docs/).
 
 (c) [SVaG][1] 2018
 

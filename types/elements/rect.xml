@@ -1,0 +1,25 @@
+<types>
+  <type name="RectAttributes" desc="Non-global attributes for the element.">
+    <prop type="length|percentage" name="x" default="0">
+      This attribute determines the x coordinate of the rect.
+    </prop>
+    <prop type="length|percentage" name="y" default="0">
+      This attribute determines the y coordinate of the rect.
+    </prop>
+    <prop type="'auto'|length|percentage" name="width" default="auto">
+      This attribute determines the width of the rect.
+    </prop>
+    <prop type="'auto'|length|percentage" name="height" default="auto">
+      This attribute determines the height of the rect.
+    </prop>
+    <prop type="'auto'|length|percentage" name="rx" default="auto">
+      This attribute determines the horizontal corner radius of the rect.
+    </prop>
+    <prop type="'auto'|length|percentage" name="ry" default="auto">
+      This attribute determines the vertical corner radius of the rect.
+    </prop>
+    <prop opt type="number" name="pathLength">
+      This attribute lets specify the total length for the path, in user units.
+    </prop>
+  </type>
+</types>

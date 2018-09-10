@@ -1,35 +1,10 @@
 <types>
-  <type name="SVGOptions" desc="An option for creating an svg.">
-    <prop number name="width">
-      The width of the `svg`.
-    </prop>
-    <prop number name="height">
-      The height of the `svg`.
-    </prop>
-    <prop string name="content">
-      The content to put inside of the `svg`.
-    </prop>
-    <prop boolean name="stretch" default="true">
-      Expand the `svg` to the width of the container by not setting `width` and `height` attributes.
-    </prop>
-  </type>
   <type name="Coordinate" desc="A coordinate used for drawing.">
     <prop number name="x">
       The `x` position of the coordinate.
     </prop>
     <prop number name="y">
       The `y` position of the coordinate.
-    </prop>
-  </type>
-  <type name="MakeElementOptions" desc="Options to make a new element.">
-    <prop string name="name">
-      The name of the new element element.
-    </prop>
-    <prop opt string name="content">
-      The content to write inside of the element.
-    </prop>
-    <prop opt type="object" name="attributes">
-      A map of attributes to add to the element.
     </prop>
   </type>
 </types>
