@@ -12,7 +12,7 @@ yarn add -E @svag/lib
 
 - [Table Of Contents](#table-of-contents)
 - [API](#api)
-  * [`makeElement(name: string, options: MakeElementOptions): string`](#makeelementname-stringoptions-makeelementoptions-string)
+  * [`makeElement(name: string, options?: MakeElementOptions): string`](#makeelementname-stringoptions-makeelementoptions-string)
     * [`MakeElementOptions`](#makeelementoptions)
   * [`minify(svg: string): string`](#minifysvg-string-string)
   * [`roundedCorner(from: Coordinate, to: Coordinate, anticlockwise?: boolean): string`](#roundedcornerfrom-coordinateto-coordinateanticlockwise-boolean-string)
@@ -35,7 +35,7 @@ The package library exports a number of functions, including `makeElement` and `
 import { makeElement, minify } from '@svag/lib'
 ```
 
-### `makeElement(`<br/>&nbsp;&nbsp;`name: string,`<br/>&nbsp;&nbsp;`options: MakeElementOptions,`<br/>`): string`
+### `makeElement(`<br/>&nbsp;&nbsp;`name: string,`<br/>&nbsp;&nbsp;`options?: MakeElementOptions,`<br/>`): string`
 
 This function will create an element as a string given its name and the options. The attributes will be split by new lines whenever the line width reaches the length of 100 symbols, and each line of the content will be indented by 2 spaces as well.
 
@@ -43,37 +43,33 @@ __<a name="makeelementoptions">`MakeElementOptions`</a>__: Options to make a new
 
 | Name | Type | Description | Default |
 | ---- | ---- | ----------- | ------- |
-| __name*__ | _string_ | The name of the new element element. | - |
 | content | _string\|string[]_ | The content to write inside of the element, such as string or an array of strings. | - |
 | attributes | _object_ | A map of attributes to add to the element. | - |
 
 ```js
 import { makeElement } from '@svag/lib'
 
-const circle = makeElement({
-  name: 'circle',
+const circle = makeElement('circle', {
   attributes: {
     cx: 50,
     cy: 50,
     r: 25,
   },
 })
-const rect = makeElement({
-  name: 'rect',
+const rect = makeElement('rect', {
   attributes: {
     width: '100',
     height: '100',
   },
 })
-const g = makeElement({
-  name: 'g',
+const g = makeElement('g', {
   attributes: {
     fill: 'green',
   },
   // 1. SET Single content attribute
   content: rect,
 })
-const element = makeElement({
+const element = makeElement('g', {
   name: 'g',
   attributes: {
     test: true,

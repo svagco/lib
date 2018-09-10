@@ -2,7 +2,7 @@
 ```### makeElement => string
 [
   ["name", "string"],
-  ["options", "MakeElementOptions"]
+  ["options?", "MakeElementOptions"]
 ]
 ```
 
