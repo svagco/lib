@@ -6,7 +6,7 @@ import { roundedCorner } from '../../src'
 const T = {
   context: Context,
   clockwise: {
-    '!bottom-right'() {
+    'bottom-right'() {
       const res = roundedCorner({ x: 10, y: 0 }, { x: 0, y: 10 })
       equal(res, 'C 10 5, 5 10, 0 10')
     },
@@ -24,19 +24,19 @@ const T = {
     },
   },
   anticlockwise: {
-    '!bottom-right'() {
+    'bottom-right'() {
       const res = roundedCorner({ x: 0, y: 10 }, { x: 10, y: 0 }, true)
       equal(res, 'C 5 10, 10 5, 10 0')
     },
-    '!bottom-left'() {
+    'bottom-left'() {
       const res = roundedCorner({ x: 0, y: 0 }, { x: 10, y: 10 }, true)
       equal(res, 'C 0 5, 5 10, 10 10')
     },
-    '!top-left'() {
+    'top-left'() {
       const res = roundedCorner({ x: 10, y: 0 }, { x: 0, y: 10 }, true)
       equal(res, 'C 5 0, 0 5, 0 10')
     },
-    '!top-right'() {
+    'top-right'() {
       const res = roundedCorner({ x: 10, y: 10 }, { x: 0, y: 0 }, true)
       equal(res, 'C 10 5, 5 0, 0 0')
     },

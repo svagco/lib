@@ -21,15 +21,4 @@
       The `y` position of the coordinate.
     </prop>
   </type>
-  <type name="MakeElementOptions" desc="Options to make a new element.">
-    <prop string name="name">
-      The name of the new element element.
-    </prop>
-    <prop opt string name="content">
-      The content to write inside of the element.
-    </prop>
-    <prop opt type="object" name="attributes">
-      A map of attributes to add to the element.
-    </prop>
-  </type>
 </types>

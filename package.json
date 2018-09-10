@@ -12,8 +12,9 @@
     "lint": "eslint .",
     "doc": "NODE_DEBUG=doc doc documentary -o README.md",
     "d": "NODE_DEBUG=doc doc src/index.js -g",
+    "d2": "NODE_DEBUG=doc doc src/lib/make-element.js -g",
     "b": "alamode src -o build",
-    "build": "yarn-s d b doc",
+    "build": "yarn-s d d2 b doc",
     "rec": "NODE_DEBUG=appshot appshot -T 23 -a Terminal -y 150 -f",
     "e": "node example",
     "example/": "yarn e example/example.js"

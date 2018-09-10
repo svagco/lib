@@ -1,6 +1,6 @@
-import { equal, ok, throws } from 'zoroaster/assert'
+import { equal, throws } from 'zoroaster/assert'
 import Context from '../context'
-import { makeElement } from '../../src'
+import makeElement from '../../src/lib/make-element'
 
 /** @type {Object.<string, (c: Context)>} */
 const T = {
@@ -29,7 +29,9 @@ const T = {
       name: 'test',
       content,
     })
-    equal(el, `<test>${content}</test>`)
+    equal(el, `<test>
+  ${content}
+</test>`)
   },
   'can create a new element with attributes'() {
     const el = makeElement({
@@ -62,7 +64,19 @@ const T = {
       },
       content,
     })
-    equal(el, `<test test="true" font-color="green">${content}</test>`)
+    equal(el, `<test test="true" font-color="green">
+  ${content}
+</test>`)
+  },
+  'creates new element with array content'({ content }) {
+    const el = makeElement({
+      name: 'test',
+      content: [content, content],
+    })
+    equal(el, `<test>
+  ${content}
+  ${content}
+</test>`)
   },
 }
 
