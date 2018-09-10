@@ -1,6 +1,4 @@
 <types>
-  <type type="string|number" name="length" desc="A length is a distance measurement, given as a number along with a unit." noToc/>
-  <type type="string" name="percentage" desc="Percentages are specified as a number followed by a `%` character." noToc/>
   <type name="RectAttributes" desc="Non-global attributes for the element.">
     <prop type="length|percentage" name="x" default="0">
       This attribute determines the x coordinate of the rect.

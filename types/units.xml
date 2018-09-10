@@ -1,0 +1,4 @@
+<types>
+  <type type="string|number" name="length" desc="A length is a distance measurement, given as a number along with a unit."/>
+  <type type="string" name="percentage" desc="Percentages are specified as a number followed by a `%` character."/>
+</types>

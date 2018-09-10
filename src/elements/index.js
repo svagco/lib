@@ -42,6 +42,13 @@ export const rect = (attributes) => {
   return res
 }
 
+/* documentary types/units.xml */
+/**
+ * @typedef {string|number} length A length is a distance measurement, given as a number along with a unit.
+ *
+ * @typedef {string} percentage Percentages are specified as a number followed by a `%` character.
+ */
+
 /* documentary types/elements/svg.xml */
 /**
  * @typedef {Object} SVGOptions An option for creating an svg.
@@ -53,10 +60,6 @@ export const rect = (attributes) => {
 
 /* documentary types/elements/rect.xml */
 /**
- * @typedef {string|number} length A length is a distance measurement, given as a number along with a unit.
- *
- * @typedef {string} percentage Percentages are specified as a number followed by a `%` character.
- *
  * @typedef {Object} RectAttributes Non-global attributes for the element.
  * @prop {length|percentage} [x=0] This attribute determines the x coordinate of the rect. Default `0`.
  * @prop {length|percentage} [y=0] This attribute determines the y coordinate of the rect. Default `0`.

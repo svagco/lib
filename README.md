@@ -11,12 +11,15 @@ yarn add -E @svag/lib
 ## Table Of Contents
 
 - [Table Of Contents](#table-of-contents)
+- [Types](#types)
+  * [`Coordinate`](#coordinate)
+  * [`length`](#length)
+  * [`percentage`](#percentage)
 - [API](#api)
   * [`makeElement(name: string, options?: MakeElementOptions): string`](#makeelementname-stringoptions-makeelementoptions-string)
     * [`MakeElementOptions`](#makeelementoptions)
   * [`minify(svg: string): string`](#minifysvg-string-string)
   * [`roundedCorner(from: Coordinate, to: Coordinate, anticlockwise?: boolean): string`](#roundedcornerfrom-coordinateto-coordinateanticlockwise-boolean-string)
-    * [`Coordinate`](#coordinate)
     * [Clockwise](#clockwise)
     * [Anticlockwise](#anticlockwise)
 - [Elements](#elements)
@@ -26,6 +29,21 @@ yarn add -E @svag/lib
     * [`RectAttributes`](#rectattributes)
 - [TODO](#todo)
 - [Copyright](#copyright)
+
+## Types
+
+There are some common types used by various methods. They are described in this section.
+
+__<a name="coordinate">`Coordinate`</a>__: A coordinate used for drawing.
+
+| Name | Type | Description | Default |
+| ---- | ---- | ----------- | ------- |
+| __x*__ | _number_ | The `x` position of the coordinate. | - |
+| __y*__ | _number_ | The `y` position of the coordinate. | - |
+
+`string|number` __<a name="length">`length`</a>__: A length is a distance measurement, given as a number along with a unit.
+
+`string` __<a name="percentage">`percentage`</a>__: Percentages are specified as a number followed by a `%` character.
 
 ## API
 
@@ -121,13 +139,6 @@ const minified = minify(svg)
 ### `roundedCorner(`<br/>&nbsp;&nbsp;`from: Coordinate,`<br/>&nbsp;&nbsp;`to: Coordinate,`<br/>&nbsp;&nbsp;`anticlockwise?: boolean,`<br/>`): string`
 
 Create a `C` directive to include in a `path` element to create a rounded corner. If `anticlockwise` argument is passed, the path will follow the counter-clockwise movement.
-
-__<a name="coordinate">`Coordinate`</a>__: A coordinate used for drawing.
-
-| Name | Type | Description | Default |
-| ---- | ---- | ----------- | ------- |
-| __x*__ | _number_ | The `x` position of the coordinate. | - |
-| __y*__ | _number_ | The `y` position of the coordinate. | - |
 
 <a name="clockwise">Clockwise</a>: The table below shows the corners drawn clockwise.
 
@@ -431,10 +442,6 @@ const fixedSvg = svg({
 
 Create a `<rect>` element.
 
-`string` __`percentage`__: Percentages are specified as a number followed by a `%` character.
-
-`string|number` __`length`__: A length is a distance measurement, given as a number along with a unit.
-
 __<a name="rectattributes">`RectAttributes`</a>__: Non-global attributes for the element.
 
 | Name | Type | Description | Default |
@@ -464,7 +471,8 @@ const image = rect({
 
 ## TODO
 
-- [ ] Create an alias for each SVG element, e.g., `circle`, `rect`, _etc_.
+- [ ] Create an alias for each SVG element, e.g., `circle`, _etc_.
+- [ ] Update `documentary` to make sure that types are linked to their description.
 
 ## Copyright
 
