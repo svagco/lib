@@ -8,25 +8,15 @@ const T = {
   async 'throws when no options are passed'() {
     await throws({
       fn: makeElement,
-      message: 'Options were not passed.',
-    })
-  },
-  async 'throws when no element is passed'() {
-    await throws({
-      fn: makeElement,
-      args: [{}],
-      message: 'Expected to see an element name.',
+      message: 'The element name was not passed.',
     })
   },
   'can create a new element'() {
-    const el = makeElement({
-      name: 'test',
-    })
+    const el = makeElement('test')
     equal(el, '<test/>')
   },
   'can create a new element with content'({ content }) {
-    const el = makeElement({
-      name: 'test',
+    const el = makeElement('test', {
       content,
     })
     equal(el, `<test>
@@ -34,8 +24,7 @@ const T = {
 </test>`)
   },
   'can create a new element with attributes'() {
-    const el = makeElement({
-      name: 'test',
+    const el = makeElement('test', {
       attributes: {
         test: true,
         'font-color': 'green',
@@ -44,8 +33,7 @@ const T = {
     equal(el, '<test test="true" font-color="green"/>')
   },
   'ignores undefined attributes'() {
-    const el = makeElement({
-      name: 'test',
+    const el = makeElement('test', {
       attributes: {
         test: true,
         'font-color': 'green',
@@ -56,7 +44,7 @@ const T = {
     equal(el, '<test test="true" font-color="green"/>')
   },
   'can create a new element with attributes and content'({ content }) {
-    const el = makeElement({
+    const el = makeElement('test', {
       name: 'test',
       attributes: {
         test: true,
@@ -69,8 +57,7 @@ const T = {
 </test>`)
   },
   'creates new element with array content'({ content }) {
-    const el = makeElement({
-      name: 'test',
+    const el = makeElement('test', {
       content: [content, content],
     })
     equal(el, `<test>
@@ -79,12 +66,10 @@ const T = {
 </test>`)
   },
   'creates new element with array content with new lines'({ content }) {
-    const t = makeElement({
-      name: 't',
+    const t = makeElement('t', {
       content: [content, content],
     })
-    const el = makeElement({
-      name: 'test',
+    const el = makeElement('test', {
       content: t,
     })
     equal(el, `<test>

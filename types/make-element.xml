@@ -1,8 +1,5 @@
 <types>
   <type name="MakeElementOptions" desc="Options to make a new element.">
-    <prop string name="name">
-      The name of the new element element.
-    </prop>
     <prop opt type="string|string[]" name="content">
       The content to write inside of the element, such as string or an array of strings.
     </prop>

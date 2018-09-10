@@ -10,8 +10,7 @@ import makeElement from '../lib/make-element'
  */
 export const svg = (options) => {
   const { width, height, stretch = true, content } = options
-  const res = makeElement({
-    name: 'svg',
+  const res = makeElement('svg', {
     attributes: {
       version: '1.1',
       xmlns: 'http://www.w3.org/2000/svg',
@@ -37,8 +36,7 @@ export const svg = (options) => {
  * @param {number} [attributes.pathLength] This attribute lets specify the total length for the path, in user units.
  */
 export const rect = (attributes) => {
-  const res = makeElement({
-    name: 'rect',
+  const res = makeElement('rect', {
     attributes,
   })
   return res
