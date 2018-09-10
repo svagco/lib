@@ -57,7 +57,7 @@ export const rect = (attributes) => {
 /**
  * @typedef {string|number} length A length is a distance measurement, given as a number along with a unit.
  *
- * @typedef {string} percentage Percentages are specified as a number followed by a '%' character.
+ * @typedef {string} percentage Percentages are specified as a number followed by a `%` character.
  *
  * @typedef {Object} RectAttributes Non-global attributes for the element.
  * @prop {length|percentage} [x=0] This attribute determines the x coordinate of the rect. Default `0`.
