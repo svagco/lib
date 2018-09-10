@@ -5,7 +5,7 @@
 ]
 ```
 
-This function will create an element as a string given the options. The attributes will be split by new lines whenever the line width reaches the length of a 100 symbols, and each line of the content will be indented by 2 spaces as well.
+This function will create an element as a string given the options. The attributes will be split by new lines whenever the line width reaches the length of 100 symbols, and each line of the content will be indented by 2 spaces as well.
 
 %TYPEDEF types/make-element.xml MakeElementOptions%
 
