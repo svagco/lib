@@ -421,8 +421,10 @@ console.log(fixedSvg)
 
 Create a `<rect>` element.
 
-`string` __`percentage`__: Percentages are specified as a number followed by a '%' character.
+`string` __`percentage`__: Percentages are specified as a number followed by a `%` character.
+
 `string|number` __`length`__: A length is a distance measurement, given as a number along with a unit.
+
 __<a name="rectattributes">`RectAttributes`</a>__: Non-global attributes for the element.
 
 | Name | Type | Description | Default |
