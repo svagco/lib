@@ -87,11 +87,6 @@ export const svg = (options) => {
  * @typedef {Object} Coordinate A coordinate used for drawing.
  * @prop {number} x The `x` position of the coordinate.
  * @prop {number} y The `y` position of the coordinate.
- *
- * @typedef {Object} MakeElementOptions Options to make a new element.
- * @prop {string} name The name of the new element element.
- * @prop {string} [content] The content to write inside of the element.
- * @prop {object} [attributes] A map of attributes to add to the element.
  */
 
 export { makeElement }
