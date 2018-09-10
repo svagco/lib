@@ -1,6 +1,6 @@
-import { equal, ok, throws } from 'zoroaster/assert'
+import { equal } from 'zoroaster/assert'
 import Context from '../../context'
-import { svg } from '../../../src'
+import { svg } from '../../../src/elements'
 
 /** @type {Object.<string, (c: Context)>} */
 const T = {

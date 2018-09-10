@@ -7,7 +7,7 @@
 
 Generate an `svg` element with given content and dimensions.
 
-%TYPEDEF types/index.xml SVGOptions%
+%TYPEDEF types/elements/svg.xml SVGOptions%
 
 %EXAMPLE: example/elements/svg.js, ../../src => @svag/lib%
 

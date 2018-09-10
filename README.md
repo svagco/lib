@@ -22,6 +22,8 @@ yarn add -E @svag/lib
 - [Elements](#elements)
   * [`svg(options: SVGOption): string`](#svgoptions-svgoption-string)
     * [`SVGOptions`](#svgoptions)
+  * [`rect(attributes: RectAttributes): string`](#rectattributes-rectattributes-string)
+    * [`RectAttributes`](#rectattributes)
 - [TODO](#todo)
 - [Copyright](#copyright)
 
@@ -415,11 +417,46 @@ console.log(fixedSvg)
 </svg>
 ```
 
+### `rect(`<br/>&nbsp;&nbsp;`attributes: RectAttributes,`<br/>`): string`
+
+Create a `<rect>` element.
+
+`string` __`percentage`__: Percentages are specified as a number followed by a '%' character.
+`string|number` __`length`__: A length is a distance measurement, given as a number along with a unit.
+__<a name="rectattributes">`RectAttributes`</a>__: Non-global attributes for the element.
+
+| Name | Type | Description | Default |
+| ---- | ---- | ----------- | ------- |
+| x | _length\|percentage_ | This attribute determines the x coordinate of the rect. | `0` |
+| y | _length\|percentage_ | This attribute determines the y coordinate of the rect. | `0` |
+| width | _'auto'\|length\|percentage_ | This attribute determines the width of the rect. | `auto` |
+| height | _'auto'\|length\|percentage_ | This attribute determines the height of the rect. | `auto` |
+| rx | _'auto'\|length\|percentage_ | This attribute determines the horizontal corner radius of the rect. | `auto` |
+| ry | _'auto'\|length\|percentage_ | This attribute determines the vertical corner radius of the rect. | `auto` |
+| pathLength | _number_ | This attribute lets specify the total length for the path, in user units. | - |
+
+```js
+import { rect } from '@svag/lib'
+
+const image = rect({
+  height: 100,
+  width: 100,
+  rx: '0.5em',
+  ry: '0.5em',
+})
+```
+
+```svg
+<rect height="100" width="100" rx="0.5em" ry="0.5em"/>
+```
+
 ## TODO
 
 - [ ] Create an alias for each SVG element, e.g., `circle`, `rect`, _etc_.
 
 ## Copyright
+
+Some of the element documentation, including `rect` was taken directly from [MDN](https://developer.mozilla.org/en-US/docs/).
 
 (c) [SVaG][1] 2018
 
