@@ -1,30 +1,27 @@
 /* start example */
 import { makeElement } from '../src'
 
-const circle = makeElement({
-  name: 'circle',
+const circle = makeElement('circle', {
   attributes: {
     cx: 50,
     cy: 50,
     r: 25,
   },
 })
-const rect = makeElement({
-  name: 'rect',
+const rect = makeElement('rect', {
   attributes: {
     width: '100',
     height: '100',
   },
 })
-const g = makeElement({
-  name: 'g',
+const g = makeElement('g', {
   attributes: {
     fill: 'green',
   },
   // 1. SET Single content attribute
   content: rect,
 })
-const element = makeElement({
+const element = makeElement('g', {
   name: 'g',
   attributes: {
     test: true,
