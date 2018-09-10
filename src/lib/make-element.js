@@ -30,16 +30,17 @@ export const makeAttrs = (attributes, name) => {
       return s
     })
   const { acc: res } = attrs.reduce(({ prevLineLength, acc }, attr) => {
-    if (prevLineLength > 100) {
+    const test = ` ${attr}`
+    if (prevLineLength + test.length > 100) {
       const s = `${i}${attr}`
       return {
         prevLineLength: s.length,
         acc: `${acc}\n${s}`,
       }
     }
-    const newAcc = `${acc} ${attr}`
+    const newAcc = `${acc}${test}`
     return {
-      prevLineLength: prevLineLength + attr.length + 1,
+      prevLineLength: prevLineLength + test.length,
       acc: newAcc,
     }
   }, { prevLineLength: indentLength, acc: '' })

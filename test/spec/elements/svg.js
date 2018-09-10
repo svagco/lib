@@ -11,7 +11,8 @@ const T = {
       height: 100,
       width: 100,
     })
-    equal(res, `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0, 0, 100, 100">
+    equal(res, `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0, 0, 100, 100">
   ${content}
 </svg>`)
   },
@@ -22,8 +23,8 @@ const T = {
       width: 100,
       stretch: false,
     })
-    equal(res, `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0, 0, 100, 100"
-     width="100px" height="100px">
+    equal(res, `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0, 0, 100, 100" width="100px" height="100px">
   ${content}
 </svg>`)
   },

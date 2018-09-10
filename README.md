@@ -386,7 +386,8 @@ const stretchedSvg = svg({
 ```
 
 ```svg
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0, 0, 100, 100">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0, 0, 100, 100">
   <example />
 </svg>
 ```
@@ -405,8 +406,8 @@ const fixedSvg = svg({
 ```
 
 ```svg
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0, 0, 100, 100"
-     width="100px" height="100px">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0, 0, 100, 100" width="100px" height="100px">
   <example />
 </svg>
 ```

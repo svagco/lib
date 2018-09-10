@@ -100,11 +100,13 @@ const MakeAttrs = {
   'makes attributes with new lines'() {
     const res = makeAttrs({
       hello: 'world',
+      world: 'hello '.repeat(10).trim(),
       test: 'test '.repeat(20).trim(),
       test2: 'test2 '.repeat(20).trim(),
       test3: 'test3 '.repeat(20).trim(),
     }, 'el')
-    equal(res, ` hello="world" test="test test test test test test test test test test test test test test test test test test test test"
+    equal(res, ` hello="world" world="hello hello hello hello hello hello hello hello hello hello"
+    test="test test test test test test test test test test test test test test test test test test test test"
     test2="test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2"
     test3="test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3 test3"`)
   },
