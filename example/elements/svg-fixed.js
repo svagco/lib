@@ -1,3 +1,4 @@
+/* start example */
 import { svg } from '../../src'
 
 const fixedSvg = svg({
@@ -6,5 +7,6 @@ const fixedSvg = svg({
   content: '<example />',
   stretch: false,
 })
+/* end example */
 
 console.log(fixedSvg)

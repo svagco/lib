@@ -1,3 +1,4 @@
+/* start example */
 import { svg } from '../../src'
 
 const stretchedSvg = svg({
@@ -5,5 +6,6 @@ const stretchedSvg = svg({
   width: 100,
   content: '<example />',
 })
+/* end example */
 
 console.log(stretchedSvg)

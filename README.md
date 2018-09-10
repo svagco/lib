@@ -66,8 +66,6 @@ const element = makeElement({
   },
   content: circle,
 })
-
-console.log(element)
 ```
 
 ```svg
@@ -99,7 +97,6 @@ const svg = `
 `
 
 const minified = minify(svg)
-console.log(minified)
 ```
 
 ```svg
@@ -386,8 +383,6 @@ const stretchedSvg = svg({
   width: 100,
   content: '<example />',
 })
-
-console.log(stretchedSvg)
 ```
 
 ```xml
@@ -407,8 +402,6 @@ const fixedSvg = svg({
   content: '<example />',
   stretch: false,
 })
-
-console.log(fixedSvg)
 ```
 
 ```xml

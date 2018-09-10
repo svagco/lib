@@ -1,3 +1,4 @@
+/* start example */
 import { makeElement } from '../src'
 
 const circle = makeElement({
@@ -16,5 +17,6 @@ const element = makeElement({
   },
   content: circle,
 })
+/* end example */
 
 console.log(element)
