@@ -10,8 +10,7 @@ let makeElement = require('../lib/make-element'); if (makeElement && makeElement
  */
        const svg = (options) => {
   const { width, height, stretch = true, content } = options
-  const res = makeElement({
-    name: 'svg',
+  const res = makeElement('svg', {
     attributes: {
       version: '1.1',
       xmlns: 'http://www.w3.org/2000/svg',
@@ -37,8 +36,7 @@ let makeElement = require('../lib/make-element'); if (makeElement && makeElement
  * @param {number} [attributes.pathLength] This attribute lets specify the total length for the path, in user units.
  */
        const rect = (attributes) => {
-  const res = makeElement({
-    name: 'rect',
+  const res = makeElement('rect', {
     attributes,
   })
   return res
