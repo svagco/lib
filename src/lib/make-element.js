@@ -57,7 +57,7 @@ ${content}
 const makeContent = (content) => {
   if (!content) return ''
   const c = Array.isArray(content) ? content : [content]
-  const indented = c.map(el => indent(el, 2))
+  const indented = c.filter(l => l).map(el => indent(el, 2))
   const cc = indented.join('\n')
   return cc
 }

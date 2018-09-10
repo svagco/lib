@@ -79,6 +79,14 @@ const T = {
   </t>
 </test>`)
   },
+  'filters out empty elements in content'({ content }) {
+    const el = makeElement('test', {
+      content: ['', content],
+    })
+    equal(el, `<test>
+  ${content}
+</test>`)
+  },
 }
 
 const MakeAttrs = {
