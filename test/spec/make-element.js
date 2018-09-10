@@ -78,6 +78,22 @@ const T = {
   ${content}
 </test>`)
   },
+  'creates new element with array content with new lines'({ content }) {
+    const t = makeElement({
+      name: 't',
+      content: [content, content],
+    })
+    const el = makeElement({
+      name: 'test',
+      content: t,
+    })
+    equal(el, `<test>
+  <t>
+    ${content}
+    ${content}
+  </t>
+</test>`)
+  },
 }
 
 export default T

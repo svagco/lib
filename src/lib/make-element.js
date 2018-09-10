@@ -39,7 +39,7 @@ const indent = (content, spaces) => {
   const s = ' '.repeat(spaces)
   return content.split('\n').map((l) => {
     return `${s}${l}`
-  })
+  }).join('\n')
 }
 
 /* documentary types/make-element.xml */
