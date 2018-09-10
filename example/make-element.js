@@ -9,13 +9,29 @@ const circle = makeElement({
     r: 25,
   },
 })
-const element = makeElement({
+const rect = makeElement({
   name: 'rect',
+  attributes: {
+    width: '100',
+    height: '100',
+  },
+})
+const g = makeElement({
+  name: 'g',
+  attributes: {
+    fill: 'green',
+  },
+  // 1. SET Single content attribute
+  content: rect,
+})
+const element = makeElement({
+  name: 'g',
   attributes: {
     test: true,
     'font-size': '12px',
   },
-  content: circle,
+  // 2. SET Multiple content attributes
+  content: [circle, g],
 })
 /* end example */
 
