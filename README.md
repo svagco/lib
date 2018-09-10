@@ -37,7 +37,7 @@ import { makeElement, minify } from '@svag/lib'
 
 ### `makeElement(`<br/>&nbsp;&nbsp;`options: MakeElementOptions,`<br/>`): string`
 
-This function will create an element as a string given the options.
+This function will create an element as a string given the options. The attributes will be split by new lines whenever the line width reaches the length of a 100 symbols, and each line of the content will be indented by 2 spaces as well.
 
 __<a name="makeelementoptions">`MakeElementOptions`</a>__: Options to make a new element.
 
