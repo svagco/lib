@@ -1,7 +1,7 @@
 {
   "name": "@svag/lib",
   "version": "1.0.0",
-  "description": "A library for drawing SVGs from JavaScript with a set of useful methods, e.g., to create elements and rounded corners.",
+  "description": "A library for drawing SVGs from JavaScript with a set of useful methods, such as to create elements and rounded corners.",
   "main": "build",
   "scripts": {
     "t": "zoroaster -a",
