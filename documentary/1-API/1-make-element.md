@@ -7,7 +7,7 @@
 
 This function will create an element as a string given the options.
 
-%TYPEDEF types/index.xml MakeElementOptions%
+%TYPEDEF types/make-element.xml MakeElementOptions%
 
 %EXAMPLE: example/make-element.js, ../src => @svag/lib%
 

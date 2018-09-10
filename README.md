@@ -42,7 +42,7 @@ __<a name="makeelementoptions">`MakeElementOptions`</a>__: Options to make a new
 | Name | Type | Description | Default |
 | ---- | ---- | ----------- | ------- |
 | __name*__ | _string_ | The name of the new element element. | - |
-| content | _string_ | The content to write inside of the element. | - |
+| content | _string\|string[]_ | The content to write inside of the element, such as string or an array of strings. | - |
 | attributes | _object_ | A map of attributes to add to the element. | - |
 
 ```js
@@ -69,7 +69,9 @@ console.log(element)
 ```
 
 ```svg
-<rect test="true" font-size="12px"><circle cx="50" cy="50" r="25"/></rect>
+<rect test="true" font-size="12px">
+  <circle cx="50" cy="50" r="25"/>
+</rect>
 ```
 
 ### `minify(`<br/>&nbsp;&nbsp;`svg: string,`<br/>`): string`
@@ -380,7 +382,7 @@ import { svg } from '@svag/lib'
 const stretchedSvg = svg({
   height: 100,
   width: 100,
-  content: '\n  <example />\n',
+  content: '<example />',
 })
 
 console.log(stretchedSvg)
@@ -400,7 +402,7 @@ import { svg } from '@svag/lib'
 const fixedSvg = svg({
   height: 100,
   width: 100,
-  content: '\n  <example />\n',
+  content: '<example />',
   stretch: false,
 })
 
