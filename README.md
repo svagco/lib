@@ -12,7 +12,7 @@ yarn add -E @svag/lib
 
 - [Table Of Contents](#table-of-contents)
 - [API](#api)
-  * [`makeElement(options: MakeElementOptions): string`](#makeelementoptions-makeelementoptions-string)
+  * [`makeElement(name: string, options: MakeElementOptions): string`](#makeelementname-stringoptions-makeelementoptions-string)
     * [`MakeElementOptions`](#makeelementoptions)
   * [`minify(svg: string): string`](#minifysvg-string-string)
   * [`roundedCorner(from: Coordinate, to: Coordinate, anticlockwise?: boolean): string`](#roundedcornerfrom-coordinateto-coordinateanticlockwise-boolean-string)
@@ -35,9 +35,9 @@ The package library exports a number of functions, including `makeElement` and `
 import { makeElement, minify } from '@svag/lib'
 ```
 
-### `makeElement(`<br/>&nbsp;&nbsp;`options: MakeElementOptions,`<br/>`): string`
+### `makeElement(`<br/>&nbsp;&nbsp;`name: string,`<br/>&nbsp;&nbsp;`options: MakeElementOptions,`<br/>`): string`
 
-This function will create an element as a string given the options. The attributes will be split by new lines whenever the line width reaches the length of 100 symbols, and each line of the content will be indented by 2 spaces as well.
+This function will create an element as a string given its name and the options. The attributes will be split by new lines whenever the line width reaches the length of 100 symbols, and each line of the content will be indented by 2 spaces as well.
 
 __<a name="makeelementoptions">`MakeElementOptions`</a>__: Options to make a new element.
 
