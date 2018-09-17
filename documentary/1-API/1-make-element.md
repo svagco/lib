@@ -1,4 +1,3 @@
-
 ```### makeElement => string
 [
   ["name", "string"],
@@ -13,3 +12,5 @@ This function will create an element as a string given its name and the options.
 %EXAMPLE: example/make-element.js, ../src => @svag/lib%
 
 %FORK-svg example example/make-element%
+
+%~ width="15"%

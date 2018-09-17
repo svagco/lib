@@ -8,6 +8,8 @@
 yarn add -E @svag/lib
 ```
 
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/0.svg?sanitize=true"></a></p>
+
 ## Table Of Contents
 
 - [Table Of Contents](#table-of-contents)
@@ -30,20 +32,24 @@ yarn add -E @svag/lib
 - [TODO](#todo)
 - [Copyright](#copyright)
 
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true"></a></p>
+
 ## Types
 
 There are some common types used by various methods. They are described in this section.
 
 __<a name="coordinate">`Coordinate`</a>__: A coordinate used for drawing.
 
-| Name | Type | Description | Default |
-| ---- | ---- | ----------- | ------- |
-| __x*__ | _number_ | The `x` position of the coordinate. | - |
-| __y*__ | _number_ | The `y` position of the coordinate. | - |
+|  Name  |   Type   |             Description             | Default |
+| ------ | -------- | ----------------------------------- | ------- |
+| __x*__ | _number_ | The `x` position of the coordinate. | -       |
+| __y*__ | _number_ | The `y` position of the coordinate. | -       |
 
 `string|number` __<a name="length">`length`</a>__: A length is a distance measurement, given as a number along with a unit.
 
 `string` __<a name="percentage">`percentage`</a>__: Percentages are specified as a number followed by a `%` character.
+
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/2.svg?sanitize=true"></a></p>
 
 ## API
 
@@ -53,16 +59,18 @@ The package library exports a number of functions, including `makeElement` and `
 import { makeElement, minify } from '@svag/lib'
 ```
 
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/3.svg?sanitize=true"></a></p>
+
 ### `makeElement(`<br/>&nbsp;&nbsp;`name: string,`<br/>&nbsp;&nbsp;`options?: MakeElementOptions,`<br/>`): string`
 
 This function will create an element as a string given its name and the options. The attributes will be split by new lines whenever the line width reaches the length of 100 symbols, and each line of the content will be indented by 2 spaces as well.
 
 __<a name="makeelementoptions">`MakeElementOptions`</a>__: Options to make a new element.
 
-| Name | Type | Description | Default |
-| ---- | ---- | ----------- | ------- |
-| content | _string\|string[]_ | The content to write inside of the element, such as string or an array of strings. | - |
-| attributes | _object_ | A map of attributes to add to the element. | - |
+|    Name    |        Type        |                                    Description                                     | Default |
+| ---------- | ------------------ | ---------------------------------------------------------------------------------- | ------- |
+| content    | _string\|string[]_ | The content to write inside of the element, such as string or an array of strings. | -       |
+| attributes | _object_           | A map of attributes to add to the element.                                         | -       |
 
 ```js
 import { makeElement } from '@svag/lib'
@@ -107,6 +115,8 @@ const element = makeElement('g', {
 </g>
 ```
 
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/4.svg?sanitize=true" width="15"></a></p>
+
 ### `minify(`<br/>&nbsp;&nbsp;`svg: string,`<br/>`): string`
 
 Removes the whitespace between the elements in the input string.
@@ -135,6 +145,8 @@ const minified = minify(svg)
 ```svg
 <g><circle fill="#FF5F52" cx="5" cy="5" r="5.25"/><circle stroke="#E33E32" stroke-width="1" cx="5" cy="5" r="5.5"/></g><g><circle fill="#FFBE05" cx="25" cy="5" r="5.25"/><circle stroke="#E2A100" stroke-width="1" cx="25" cy="5" r="5.5"/></g><g><circle fill="#15CC35" cx="45" cy="5" r="5.25"/><circle stroke="#17B230" stroke-width="1" cx="45" cy="5" r="5.5"/></g>
 ```
+
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/5.svg?sanitize=true" width="15"></a></p>
 
 ### `roundedCorner(`<br/>&nbsp;&nbsp;`from: Coordinate,`<br/>&nbsp;&nbsp;`to: Coordinate,`<br/>&nbsp;&nbsp;`anticlockwise?: boolean,`<br/>`): string`
 
@@ -384,6 +396,8 @@ C 26 60, 51 35, 51 10
  </tbody>
 </table>
 
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/6.svg?sanitize=true"></a></p>
+
 ## Elements
 
 This section describes how to create individual elements.
@@ -394,12 +408,12 @@ Generate an `svg` element with given content and dimensions.
 
 __<a name="svgoptions">`SVGOptions`</a>__: An option for creating an svg.
 
-| Name | Type | Description | Default |
-| ---- | ---- | ----------- | ------- |
-| __width*__ | _number_ | The width of the `svg`. | - |
-| __height*__ | _number_ | The height of the `svg`. | - |
-| __content*__ | _string_ | The content to put inside of the `svg`. | - |
-| stretch | _boolean_ | Expand the `svg` to the width of the container by not setting `width` and `height` attributes. | `true` |
+|     Name     |   Type    |                                          Description                                           | Default |
+| ------------ | --------- | ---------------------------------------------------------------------------------------------- | ------- |
+| __width*__   | _number_  | The width of the `svg`.                                                                        | -       |
+| __height*__  | _number_  | The height of the `svg`.                                                                       | -       |
+| __content*__ | _string_  | The content to put inside of the `svg`.                                                        | -       |
+| stretch      | _boolean_ | Expand the `svg` to the width of the container by not setting `width` and `height` attributes. | `true`  |
 
 ```js
 import { svg } from '@svag/lib'
@@ -438,21 +452,23 @@ const fixedSvg = svg({
 </svg>
 ```
 
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/7.svg?sanitize=true" width="15"></a></p>
+
 ### `rect(`<br/>&nbsp;&nbsp;`attributes: RectAttributes,`<br/>`): string`
 
 Create a `<rect>` element.
 
 __<a name="rectattributes">`RectAttributes`</a>__: Non-global attributes for the element.
 
-| Name | Type | Description | Default |
-| ---- | ---- | ----------- | ------- |
-| x | _length\|percentage_ | This attribute determines the x coordinate of the rect. | `0` |
-| y | _length\|percentage_ | This attribute determines the y coordinate of the rect. | `0` |
-| width | _'auto'\|length\|percentage_ | This attribute determines the width of the rect. | `auto` |
-| height | _'auto'\|length\|percentage_ | This attribute determines the height of the rect. | `auto` |
-| rx | _'auto'\|length\|percentage_ | This attribute determines the horizontal corner radius of the rect. | `auto` |
-| ry | _'auto'\|length\|percentage_ | This attribute determines the vertical corner radius of the rect. | `auto` |
-| pathLength | _number_ | This attribute lets specify the total length for the path, in user units. | - |
+|    Name    |                          Type                          |                                Description                                | Default |
+| ---------- | ------------------------------------------------------ | ------------------------------------------------------------------------- | ------- |
+| x          | _[length](#length)\|[percentage](#percentage)_         | This attribute determines the x coordinate of the rect.                   | `0`     |
+| y          | _[length](#length)\|[percentage](#percentage)_         | This attribute determines the y coordinate of the rect.                   | `0`     |
+| width      | _'auto'\|[length](#length)\|[percentage](#percentage)_ | This attribute determines the width of the rect.                          | `auto`  |
+| height     | _'auto'\|[length](#length)\|[percentage](#percentage)_ | This attribute determines the height of the rect.                         | `auto`  |
+| rx         | _'auto'\|[length](#length)\|[percentage](#percentage)_ | This attribute determines the horizontal corner radius of the rect.       | `auto`  |
+| ry         | _'auto'\|[length](#length)\|[percentage](#percentage)_ | This attribute determines the vertical corner radius of the rect.         | `auto`  |
+| pathLength | _number_                                               | This attribute lets specify the total length for the path, in user units. | -       |
 
 ```js
 import { rect } from '@svag/lib'
@@ -469,6 +485,8 @@ const image = rect({
 <rect height="100" width="100" rx="0.5em" ry="0.5em"/>
 ```
 
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/8.svg?sanitize=true"></a></p>
+
 ## TODO
 
 - [ ] Create an alias for each SVG element, e.g., `circle`, _etc_, and parse their documentation from `MDN`.
@@ -483,3 +501,5 @@ Some of the element documentation, including `rect` was taken directly from [MDN
 (c) [SVaG][1] 2018
 
 [1]: https://svag.co
+
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/-1.svg?sanitize=true"></a></p>

@@ -1,4 +1,3 @@
-
 ```### roundedCorner => string
 [
   ["from", "Coordinate"],

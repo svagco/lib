@@ -1,4 +1,3 @@
-
 [Anticlockwise](t): The table below shows the corners drawn anticlockwise.
 
 <table>

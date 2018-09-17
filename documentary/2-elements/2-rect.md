@@ -1,4 +1,3 @@
-
 ```### rect => string
 [
   ["attributes", "RectAttributes"]

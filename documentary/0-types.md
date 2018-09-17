@@ -1,4 +1,3 @@
-
 ## Types
 
 There are some common types used by various methods. They are described in this section.
@@ -6,3 +5,5 @@ There are some common types used by various methods. They are described in this 
 %TYPEDEF types/index.xml%
 
 %TYPEDEF types/units.xml%
+
+%~%

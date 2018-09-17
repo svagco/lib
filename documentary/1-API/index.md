@@ -1,4 +1,3 @@
-
 ## API
 
 The package library exports a number of functions, including `makeElement` and `minify`.
@@ -6,3 +5,5 @@ The package library exports a number of functions, including `makeElement` and `
 ```js
 import { makeElement, minify } from '@svag/lib'
 ```
+
+%~%

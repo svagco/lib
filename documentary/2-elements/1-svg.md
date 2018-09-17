@@ -1,4 +1,3 @@
-
 ```### svg => string
 [
   ["options", "SVGOption"]
@@ -18,3 +17,5 @@ To generate an `svg` which will not adjust its size to the viewport, the `stretc
 %EXAMPLE: example/elements/svg-fixed.js, ../../src => @svag/lib%
 
 %FORK-svg example example/elements/svg-fixed%
+
+%~ width="15"%
